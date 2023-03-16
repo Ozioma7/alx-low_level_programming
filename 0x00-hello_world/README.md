@@ -1,0 +1,4 @@
+Preprocessor
+Compiler
+Assembler
+Linking
