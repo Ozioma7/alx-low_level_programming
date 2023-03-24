@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include "main.h"
+
 /**
- * main - FizzBuzz
- * Return: void
+ * main - Entry Point
+ * Description: FizzBuzz
+ * Return: 0
  *
  */
 
@@ -26,7 +29,10 @@ int main(void)
 		else
 		{
 			printf("%d ", i);
+		if (i < 100)
+			printf(" ");
 		}
 	}
+	printf('\n');
 	return 0;
 }
