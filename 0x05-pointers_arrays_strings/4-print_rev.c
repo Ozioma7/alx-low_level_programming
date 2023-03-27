@@ -3,18 +3,19 @@
 /**
  * print_rev - Print string in rev
  * @s: string to be printed
+ * Return: void
  */
  
 void print_rev(char *s)
 {
-	int d = 0;
+	int f = 0;
 
-	while (s[d])
-		d++;
+	while (s[f])
+		f++;
 
-	while (d--)
+	while (f--)
 	{
-		_putchar(s[d]);
+		_putchar(s[f]);
 	}
 	_putchar('\n');
 }
