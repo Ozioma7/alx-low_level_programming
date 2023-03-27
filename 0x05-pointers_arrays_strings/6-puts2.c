@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * puts2 = What to do
+ * puts2 - What to do
  * @str: string in question
  * Return: Nothing
  */
