@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  * print_array - Print nth array
@@ -15,6 +16,7 @@ void print_array(int *a, int n)
 	{
 		printf("%d, ", a[i]);
 	}
+
 		if (i == (n - 1))
 		{
 			printf("%d", a[n - 1]);
