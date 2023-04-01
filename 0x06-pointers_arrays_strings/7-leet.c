@@ -3,7 +3,9 @@
 /**
  * leet - Function that encodes 1337
  * @str: string
+ * Return: string
  */
+
 char *leet(char *str)
 {
 	int j;
