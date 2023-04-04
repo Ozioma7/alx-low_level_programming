@@ -10,9 +10,9 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	for (; *haystick != '\0'; haystick++)
+	for (; *haystack != '\0'; haystack++)
 	{
-		char *a = haysticks;
+		char *a = haystack;
 		char *b = needle;
 
 		while (*a == *b && *b != '\0')
@@ -21,7 +21,7 @@ char *_strstr(char *haystack, char *needle)
 			b++;
 		}
 		if (*b == '\0')
-			return (hatstick);
+			return (hatstack);
 	}
 	return (0);
 }
