@@ -9,16 +9,16 @@
 
 int partialfunction(int numb, int SQRT)
 {
-	if ((numb * numb) == SQRT)
+	if ((SQRT * SQRT) == numb)
 	{
 		return (SQRT);
 	}
 	else
 	{
-		if ((numb * numb) > SQRT)
+		if ((SQRT * SQRT) > numb)
 			return (-1);
 		else
-			return (partialfunction(SQRT, numb + 1));
+			return (partialfunction(numb, SQRT + 1));
 	}
 }
 
