@@ -25,15 +25,18 @@ int checker(int a, int x, char *s)
 {
 	if (x > 0)
 	{
-		return (checker(a + 1, x - 1, s));
-	}
-	else if (s[a] != s[x])
-	{
-		return (0);
-	}
-	else
-	{
-		return (1);
+		if (s[a] == s[x])
+		{
+			return (checker(a + 1, x - 1, s));
+		}
+		else if (s[a] != s[x])
+		{
+			return (0);
+		}
+		else
+		{
+			return (1);
+		}
 	}
 	return (1);
 }
