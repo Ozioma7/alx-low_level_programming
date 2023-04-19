@@ -1,4 +1,4 @@
-#include <stdlid.h>
+#include <stdlib.h>
 #include <stdio.h>
 #include "main.h"
 
@@ -21,7 +21,7 @@ int wordcount(char *stng)
 		else if (flag == 0)
 		{
 			flag = 1;
-			wrd;
+			wrd++;
 		}
 
 	}
