@@ -6,6 +6,7 @@
  * for an array, using malloc
  * @nmemb: no of element in []
  * @size: size
+ * Return: Result
  */
 
 void *_calloc(unsigned int nmemb, unsigned int size)
@@ -22,7 +23,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	for (a = 0; a < nmemb * size; a++)
-		pt[a] = 0;
+		pt[a]
 
 	return (pt);
 }
