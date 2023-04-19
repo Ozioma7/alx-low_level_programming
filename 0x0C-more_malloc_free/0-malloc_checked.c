@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * malloc_checked - function that allocates
@@ -11,7 +12,7 @@ void *malloc_checked(unsigned int b)
 {
 	void *pt;
 
-	pt = *malloc(b);
+	pt = malloc(b);
 
 	if (pt == NULL)
 	{
