@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 {
 	unsigned int a;
 	va_list inputs;
-	char *x, *separator;
+	char *s, *separator;
 
 	va_start(inputs, format);
 
@@ -33,11 +33,11 @@ void print_all(const char * const format, ...)
 			case 'f':
 				printf("%s%f", separator, va_arg(inputs, double));
 				break;
-			case 'x':
-				x = va_arg(inputs, char *);
-				if (x == NULL)
-					x = "(nil)";
-				printf("%s%s", separator, x);
+			case 's':
+				s = va_arg(inputs, char *);
+				if (s == NULL)
+					s = "(nil)";
+				printf("%s%s", separator, s);
 				break;
 			default:
 				a++;
