@@ -1,3 +1,7 @@
+section .data
+msg:	db "Hello, Holberton", 0
+fmt:	db "%s", 10 0
+
 section .text
 	extern printf
 	global main
@@ -5,12 +9,8 @@ section .text
 main:
 	mov esi, msg
 	mov edi, fmt
-	mov eax, 0	;system call (sys_write)
-	call printf	;to call kernel
+	mov eax, 0
+	call printf
 
-	mov eax, 0	;system call (sys_exit)
+	mov eax, 0
 	ret
-
-section .data
-msg	db "Hello, Holberton",0xa ; also 10
-ftm:	db "%s", 10, 0
