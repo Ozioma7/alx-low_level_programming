@@ -7,6 +7,7 @@
  * struct node - singly linked list
  * @str: string
  * @len: lenght of string
+ * @next: next node
  */
 
 typedef struct node
