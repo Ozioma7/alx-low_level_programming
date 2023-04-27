@@ -1,17 +1,16 @@
 section .text
-	global _start
+	extern printf
+	global main
 
-_start:
-	mov edx, len
-	mov ecx, msg
-	mov ebx, 1
-	mov eax, 4	;system call (sys_write)
-	int 0x80	;to call kernel
+main:
+	mov esi, msg
+	mov edi, fmt
+	mov eax, 0	;system call (sys_write)
+	call printf	;to call kernel
 
-	mov eax, 1	;system call (sys_exit)
-	int 0x80
+	mov eax, 0	;system call (sys_exit)
+	ret
 
 section .data
-	msg db "Hello, Holberton",0xa ; also 10
-	len equ $ -msg
-
+msg	db "Hello, Holberton",0xa ; also 10
+ftm:	db "%s", 10, 0
