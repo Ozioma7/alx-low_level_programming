@@ -8,6 +8,8 @@
  * @str: string
  * @len: lenght of string
  * @next: next node
+ *
+ * Description: Singly linked list
  */
 
 typedef struct node
