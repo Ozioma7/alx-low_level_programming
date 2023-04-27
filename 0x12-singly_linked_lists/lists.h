@@ -1,8 +1,10 @@
-#ifndef LISTS_H
-#define LISTS_H
+#ifndef _LISTS_
+#define _LISTS_
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
+
 /**
  * struct node - singly linked list
  * @str: string
