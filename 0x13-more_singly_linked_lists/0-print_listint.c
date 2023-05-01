@@ -8,15 +8,12 @@
 
 size_t print_listint(const listint_t *h)
 {
-	struct node* Num = head;
+	int n = 0;
 
-	int count = 0;
-
-	while (Num != NULL)
+	while (h != NULL)
 	{
-		Num = Num->next;
-
-		count++;
+		h = h->next;
+		n++;
 	}
-	printf("Number of Nodes is %d\n", count);
+	return (n);
 }
