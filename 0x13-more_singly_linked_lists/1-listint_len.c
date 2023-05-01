@@ -1,9 +1,9 @@
 #include "lists.h"
 
-/*
- * listint_len -  function that returns the number
+/**
+ * listint_len - function that returns the number
  * of elements in a linked listint_t list.
- * @h: Hesd Pointer.
+ * @h: Head Pointer.
  * Return: Number of nodes.
  */
 
