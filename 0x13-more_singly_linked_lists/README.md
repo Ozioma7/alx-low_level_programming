@@ -1,0 +1,18 @@
+C - More singly linked lists
+
+This task does the following:
+
+Writes a function that prints all the elements of a listint_t list.
+Writes a function that returns the number of elements in a linked listint_t list.
+Writes a function that adds a new node at the beginning of a listint_t list.
+Writes a function that adds a new node at the end of a listint_t list.
+Writes a function that frees a listint_t list.
+Writes a function that frees a listint_t list.
+Writes a function that deletes the head node of a listint_t linked list, and returns the head node’s data (n).
+Writes a function that returns the nth node of a listint_t linked list.
+Writes a function that returns the sum of all the data (n) of a listint_t linked list.
+Writes a function that inserts a new node at a given position.
+Writes a function that deletes the node at index index of a listint_t linked list.
+Writes a function that reverses a listint_t linked list.
+Writes a function that prints a listint_t linked list.
+Writes a function that frees a listint_t list.
