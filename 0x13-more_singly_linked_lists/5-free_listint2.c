@@ -11,6 +11,9 @@ void free_listint2(listint_t **head)
 
 	fhead = *head;
 
+	if (head == NULL)
+		return;
+
 	while (fhead)
 	{
 		trav = fhead->next;
@@ -18,6 +21,6 @@ void free_listint2(listint_t **head)
 		fhead = trav;
 	}
 
-	*head = NULL;
+	head = NULL;
 }
 
