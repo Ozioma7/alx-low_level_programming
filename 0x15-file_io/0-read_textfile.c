@@ -12,9 +12,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	char *Read;
 	ssize_t Rd, R, P;
 
-	if (filename == '\0')
-		return (0);
-	Rd = open(filename, o_RDONLY);
+	Rd = open(filename, O_RDONLY);
 
 	if (Rd == -1)
 		return (0);
