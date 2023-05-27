@@ -10,7 +10,7 @@
  */
 void fileError(int file_from, int file_to, char *argv[])
 {
-	if (home_file == -1)
+	if (file_from == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -52,7 +52,7 @@ int main(int argc, char *argv[])
 		if (num_chars == -1)
 			error_file(-1, 0, argv);
 		n = write(file_to, buf, num_chars);
-		if (nwr == -1)
+		if (n == -1)
 			error_file(0, -1, argv);
 	}
 
