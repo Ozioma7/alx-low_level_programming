@@ -1,4 +1,5 @@
 #include "main.h"
+#include <error.h>
 
 /**
  * fileError - If the file can open..
