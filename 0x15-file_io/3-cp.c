@@ -2,14 +2,14 @@
 #include <error.h>
 
 /**
- * fileError - If the file can open..
+ * error_file - If the file can open..
  * @file_from: file_from.
  * @file_to: file_to.
  * @argv: arguments vector.
  *
  * Return: no return.
  */
-void fileError(int file_from, int file_to, char *argv[])
+void error_file(int file_from, int file_to, char *argv[])
 {
 	if (file_from == -1)
 	{
