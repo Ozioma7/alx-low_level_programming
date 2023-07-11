@@ -1,5 +1,5 @@
 #include "main.h"
-#include <error.h>
+#include <stdio.h>
 
 /**
  * error_file - If the file can open..
@@ -16,7 +16,6 @@ void error_file(int file_from, int file_to, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-
 	if (file_to == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to file %s\n", argv[2]);
@@ -72,6 +71,5 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from);
 		exit(100);
 	}
-
 	return (0);
 }
