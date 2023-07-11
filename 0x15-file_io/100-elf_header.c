@@ -11,15 +11,15 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void check_elf(unsigned char *e_ident);
-void print_magic(unsigned char *e_ident);
-void print_class(unsigned char *e_ident);
-void print_data(unsigned char *e_ident);
-void print_version(unsigned char *e_ident);
-void print_abi(unsigned char *e_ident);
-void print_osabi(unsigned char *e_ident);
-void print_type(unsigned int e_type, unsigned char *e_ident);
-void print_entry(unsigned long int e_entry, unsigned char *e_ident);
+void check_elf(unsigned char *elf_id);
+void print_magic(unsigned char *elf_id);
+void print_class(unsigned char *elf_id);
+void print_data(unsigned char *elf_id);
+void print_version(unsigned char *elf_id);
+void print_abi(unsigned char *elf_id);
+void print_osabi(unsigned char *elf_id);
+void print_type(unsigned int elf_type, unsigned char *elf_id);
+void print_entry(unsigned long int elf_entry, unsigned char *elf_id);
 void close_elf(int elf);
 
 /**
@@ -177,7 +177,7 @@ void print_osabi(unsigned char *elf_id)
 			printf("Standalone App\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_ident[EI_OSABI]);
+			printf("<unknown: %x>\n", elf_id[EI_OSABI]);
 	}
 }
 
@@ -222,7 +222,7 @@ void print_type(unsigned int elf_type, unsigned char *elf_id)
 			printf("CORE (Core file)\n");
 			break;
 		default:
-			printf("<unknown: %x>\n", e_type);
+			printf("<unknown: %x>\n", elf_type);
 	}
 }
 
@@ -296,16 +296,16 @@ int main(int __attribute__((__unused__)) argc, char *argv[])
 		exit(98);
 	}
 
-	check_elf(header->e_ident);
+	check_elf(header->elf_id);
 	printf("ELF Header:\n");
-	print_magic(header->e_ident);
-	print_class(header->e_ident);
-	print_data(header->e_ident);
-	print_version(header->e_ident);
-	print_osabi(header->e_ident);
-	print_abi(header->e_ident);
-	print_type(header->e_type, header->e_ident);
-	print_entry(header->e_entry, header->e_ident);
+	print_magic(header->elf_id);
+	print_class(header->elf_id);
+	print_data(header->elf_id);
+	print_version(header->elf_id);
+	print_osabi(header->elf_id);
+	print_abi(header->elf_id);
+	print_type(header->elf_type, header->elf_id);
+	print_entry(header->elf_entry, header->elf_id);
 
 	free(header);
 	close_elf(o);
