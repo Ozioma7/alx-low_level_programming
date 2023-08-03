@@ -2,6 +2,7 @@
 
 /**
  * get_endianness - That checks the endianness.
+ *
  * Return: 0 or 1
  */
 
