@@ -4,7 +4,7 @@
  * insert_dnodeint_at_index - inserts a new node at a given position
  * @h: double pointer to head
  * @idx: index of node
- * n: data
+ * @n: data
  * Return: Result or 0
  */
 
