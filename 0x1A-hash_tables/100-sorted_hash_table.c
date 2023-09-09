@@ -45,23 +45,23 @@ void sorted_list(shash_table_t *ht, shash_node_t *new_node)
 
 shash_table_t *shash_table_create(unsigned long int size)
 {
-	shash_table_t *hash_t;
-	unsigned long int i;
+	shash_table_t *h_table;
 
-	hash_t = malloc(sizeof(shash_table_t));
-	if (hash_t == NULL)
+	if (size == 0)
 		return (NULL);
 
-	hash_t->size = size;
-	hash_t->array = malloc(sizeof(shash_node_t *) * size);
-	if (hash_t->array == NULL)
+	h_table = calloc(1, sizeof(shash_table_t));
+	if (h_table == NULL)
 		return (NULL);
-	for (i = 0; i < size; i++)
-		hash_t->array[i] = NULL;
-	hash_t->shead = NULL;
-	hash_t->stail = NULL;
 
-	return (hash_t);
+	h_table->size = size;
+	h_table->array = calloc(size, sizeof(shash_node_t *));
+	if (h_table->array == NULL)
+	{
+		free(h_table);
+		return (NULL);
+	}
+	return (h_table);
 }
 
 
@@ -124,21 +124,20 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 
 char *shash_table_get(const shash_table_t *ht, const char *key)
 {
-	shash_node_t *node;
-	unsigned long int index;
+	unsigned long int index = 0;
+	shash_node_t  *node;
 
 	if (!ht || !key || !*key)
 		return (NULL);
-
 	index = key_index((const unsigned char *)key, ht->size);
-	if (index >= ht->size)
-		return (NULL);
-
-	node = ht->shead;
-	while (node != NULL && strcmp(node->key, key) != 0)
-		node = node->snext;
-
-	return ((node == NULL) ? NULL : node->value);
+	node = ht->array[index];
+	while (node)
+	{
+		if (!strcmp(key, node->key))
+			return (node->value);
+		node = node->next;
+	}
+	return (NULL);
 }
 
 /**
